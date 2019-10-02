@@ -16,5 +16,11 @@ keypoints:
 - ""
 ---
 
-FIXME: this is too abstract. find good application
+> ## Challenge
+> Merge WDI data to Comercio Exterior data. Use a translation table to merge country codes. 
+{: .challenge}
 
+
+> ## Challenge
+> Take the example data files. Create a Table Schema file and a Data Package metadata file describing these resources. 
+{: .challenge}

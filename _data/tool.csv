@@ -14,3 +14,5 @@ Data Curator,"Data Curator is a simple desktop CSV editor to help describe, vali
 bead,Command-line tool to package data and code together,,,https://github.com/ceumicrodata/bead/releases,,tool,python,
 csvkit,"csvkit is a suite of command-line tools for converting to and working with CSV, the king of tabular file formats",Work with .csv files in the command line,https://csvkit.readthedocs.io/en/latest/,,,tool,python,1
 python,,,,,,technology,,
+API,,,,,,technology,,
+RegEx,,,,,,technology,,1

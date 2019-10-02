@@ -18,3 +18,12 @@ keypoints:
 ---
 
 FIXME: target data: Spanish Agencia Tributaria?
+> ## Challenge
+> Download the Comercio Exterior data for 2018 using wget. 
+{: .challenge}
+
+FIXME: We cannot extract from JSON without a programming language or specialized tool.
+
+> ## Challenge
+> Use csvkit to select all managers living in Hamburg from `geschaftsfuhrer.csv`. 
+{: .challenge}
