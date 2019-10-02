@@ -15,7 +15,8 @@ objectives:
 - Model two-dimensional panel data.
 - Model networked data as bipartite graphs.
 - Apply spatial relations to spatial data.
-- Understand geocoding and georeferencing.
+- Understand geocoding.
+- Execute simple graph queries in Neo4j or other graph database.
 keypoints:
 - ""
 ---

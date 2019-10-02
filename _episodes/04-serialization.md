@@ -12,6 +12,7 @@ objectives:
 - Use hexadecimal transformation of numbers.
 - Understand base64 encoding.
 - Download data in various formats using wget.
+- Explore .csv files with csvkit.
 keypoints:
 - ""
 ---
