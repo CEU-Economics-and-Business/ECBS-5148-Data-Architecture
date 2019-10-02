@@ -1,6 +1,6 @@
 ---
 title: "Data Modeling"
-teaching: 0
+teaching: 250
 exercises: 0
 questions:
 - ""

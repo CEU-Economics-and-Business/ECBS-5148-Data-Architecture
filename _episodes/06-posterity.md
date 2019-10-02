@@ -1,6 +1,6 @@
 ---
 title: "Designing for Posterity"
-teaching: 0
+teaching: 200
 exercises: 0
 questions:
 - ""

@@ -1,6 +1,6 @@
 ---
 title: "Data Serialization"
-teaching: 0
+teaching: 200
 exercises: 0
 questions:
 - ""

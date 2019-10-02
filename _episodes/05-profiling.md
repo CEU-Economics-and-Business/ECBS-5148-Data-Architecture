@@ -1,6 +1,6 @@
 ---
 title: "Data Integration and Profiling"
-teaching: 0
+teaching: 100
 exercises: 0
 questions:
 - ""
