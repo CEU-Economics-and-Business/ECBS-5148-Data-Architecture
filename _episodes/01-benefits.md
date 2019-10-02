@@ -1,6 +1,6 @@
 ---
 title: "The Benefits of Good Architecture"
-teaching: 150
+teaching: 200
 exercises: 0
 questions:
 - ""
@@ -12,6 +12,8 @@ objectives:
 - Identify key trade-offs in data architecture.
 - "Recall existing data models: table, relational data, hierarchical, networked."
 - Recognize tidy data.
+- Create conceptual and logical model of data product.
+- Create UML for simple relational data.
 keypoints:
 - Make plans that are fit for purpose and execute them.
 - Architecture for analysis differs from architecture in production.
