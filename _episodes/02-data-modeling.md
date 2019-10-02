@@ -10,7 +10,8 @@ objectives:
 - Model many-to-one relationships.
 - Model many-to-many relations through a link table.
 - Create a star schema for transactional data.
-- Define a table schema.
+- "Define table and document schema in SQL, GraphQL, JSON Schema, or Python Cerberus."
+- Create and query a simple database in SQLite.
 keypoints:
 - ""
 ---

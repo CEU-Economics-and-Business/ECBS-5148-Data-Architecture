@@ -11,6 +11,7 @@ objectives:
 - Explain the tradeoffs in data serialization.
 - Use hexadecimal transformation of numbers.
 - Understand base64 encoding.
+- Download data in various formats using wget.
 keypoints:
 - ""
 ---

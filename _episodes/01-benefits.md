@@ -21,4 +21,4 @@ FIXME: teach something immediately useful
 
 FIXME: hands-on exercise for planning (mapping?)
 
-FIXME: introduce and walk through one model in detail
+FIXME: introduce and walk through one model in detail. tree. layers.
