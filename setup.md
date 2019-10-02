@@ -15,9 +15,11 @@ title: Setup
 ## Tools and technologies
 <ol>
 {% for tool in site.data.tool %}
+  {% if tool.use == "1" %}
   <li>
       <a href="{{ tool.documentation_url }}">{{ tool.name }}</a>. {{ tool.purpose }}.
   </li>
+  {% endif %}
 {% endfor %}
 </ol>
 

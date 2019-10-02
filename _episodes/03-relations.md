@@ -12,7 +12,6 @@ objectives:
 - Model networked data as bipartite graphs.
 - Apply spatial relations to spatial data.
 - Understand geocoding.
-- Execute simple graph queries in Neo4j or other graph database.
 keypoints:
 - ""
 ---

@@ -10,7 +10,7 @@ objectives:
 - Model many-to-one relationships.
 - Model many-to-many relations through a link table.
 - Create a star schema for transactional data.
-- "Define table and document schema in SQL, Data Package, GraphQL, JSON Schema, or Python Cerberus."
+- Define table and document schema in SQL and Data Package.
 keypoints:
 - ""
 ---
