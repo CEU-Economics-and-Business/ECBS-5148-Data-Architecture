@@ -21,4 +21,13 @@ at the Federal Reserve Bank of New York and at Princeton University.
 > 
 {: .prereq}
 
+## Outline
+
+> Data architecture spans the gap between “data as it is” and “data most suitable for analysis questions.”
+
+1. Constraints: Understand user requirements and technical constraints.
+2. Conceptual layer: Map out the ideal shape of data for matching requirements.
+3. Logical layer: 
+4. Physical layer: select technologies and tools.
+
 {% include links.md %}

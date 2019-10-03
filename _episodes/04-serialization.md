@@ -1,7 +1,7 @@
 ---
-title: "Data Serialization"
-teaching: 200
-exercises: 0
+title: "Data Serialization and Performance"
+teaching: 130
+exercises: 70
 questions:
 - ""
 objectives:
@@ -14,16 +14,79 @@ objectives:
 - Download data in various formats using wget.
 - Explore .csv files with csvkit.
 keypoints:
-- ""
+- Always check your character encoding of your "plain text" data. Then immediately convert it in UTF-8.
+- Save data in human readable format to facilitate sharing and maintenance.
 ---
 
-FIXME: target data: Spanish Agencia Tributaria?
-> ## Challenge
-> Download the Comercio Exterior data for 2018 using wget. 
+> ## Exercise
+> Open `bash`. Find the folder with the _Verbbanten Bücher_ dataset and create a short documentation file `README.md`.
 {: .challenge}
 
-FIXME: We cannot extract from JSON without a programming language or specialized tool.
+> ## Exercise
+> Open the _Verbannten Bücher_ dataset in Excel. What is wrong? Display the contents in the shell using `head`.
+{: .challenge}
+
+FIXME: code examples for shell script
+
+> ## Exercise
+> Write a shell script to download all years of wage the for the [California Superior Court](https://publicpay.ca.gov/Reports/RawExport.aspx) and unzip them in a separate folder.
+{: .challenge}
 
 > ## Challenge
+> Download the Comercio Exterior data for 2018 using bash and wget. 
+{: .challenge}
+
+> ## Exercise
+> Represent the entites in the following nursery rhyme in JSON, XML and YAML. Give them a unique numeric identifier 1 through 7.
+> > As I was going to St Ives,  
+> > Upon the road I met seven wives;  
+> > Every wife had seven sacks,  
+> > Every sack had seven cats,  
+> > Every cat had seven kits:  
+> > Kits, cats, sacks, and wives,  
+> > How many were going to St Ives?  
+> 
+{: .challenge}
+
+> ## Exercise 
+> Convert the JSON lines file in _Offene Register_ to proper JSON using `jq`.
+> > ## Solution
+> > ```
+> > cat offeneregister-1000.jsonl | jq -cs '.' > offeneregister-1000.json
+> > ```
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
+
+```
+~/D/t/c/2/d/d/okf ❯ head -n5 offeneregister-1000.jsonl | jq ".officers[] | {name: .name, city: .other_attributes.city, position: .position}"
+{
+  "name": "Oliver Keunecke",
+  "city": "Hamburg",
+  "position": "Geschäftsführer"
+}
+...
+{
+  "name": "Wolfgang Adamiok",
+  "city": "Mommenheim",
+  "position": "Geschäftsführer"
+}
+```
+{: .language-bash}
+
+> ## Exercise
+> Using `jq`, create a list of JSON objects ("JSON lines"), with each record corresponding to a person-entry in the _Offene Register_, with the following fields: name, city, firm identifier.
+> > ## Solution
+> > `jq ". as $parent | .officers[] | {name: .name, firm: $parent.company_number, city: .other_attributes.city, position: .position}"`
+> {: solution}
+{: .challenge}
+
+FIXME: JSON and jq seem enough for this class
+
+> ## Exercise
 > Use csvkit to select all managers living in Hamburg from `geschaftsfuhrer.csv`. 
+{: .challenge}
+
+> ## Challenge
+> Use csvkit to create a JSON file of all unique first and last names by city in `geschaftsfuhrer.csv`. Adding an extra column `number_occur`, capturing the number of times an identical row occurs in the .csv file. 
 {: .challenge}

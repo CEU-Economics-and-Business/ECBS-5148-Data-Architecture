@@ -12,10 +12,21 @@ title: Setup
 {% endfor %}
 </ol>
 
-## Tools and technologies
+## Tools 
 <ol>
 {% for tool in site.data.tool %}
-  {% if tool.use == "1" %}
+  {% if tool.use == "1" and tool.type == "tool" %}
+  <li>
+      <a href="{{ tool.documentation_url }}">{{ tool.name }}</a>. {{ tool.purpose }}.
+  </li>
+  {% endif %}
+{% endfor %}
+</ol>
+
+## Technologies
+<ol>
+{% for tool in site.data.tool %}
+  {% if tool.use == "1" and tool.type == "technology" %}
   <li>
       <a href="{{ tool.documentation_url }}">{{ tool.name }}</a>. {{ tool.purpose }}.
   </li>

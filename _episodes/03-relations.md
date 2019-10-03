@@ -16,3 +16,6 @@ keypoints:
 - ""
 ---
 
+FIXME: we don't have enough time and tools to deal with spatial data
+
+NB: this episode can go without endangering the rest of lesson

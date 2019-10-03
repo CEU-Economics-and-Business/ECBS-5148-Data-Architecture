@@ -13,7 +13,7 @@ objectives:
 - Communicate design choices effectively.
 - Create a Data Package to share data and metadata together.
 keypoints:
-- ""
+- Join late.
 ---
 
 > ## Challenge
