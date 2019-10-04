@@ -16,5 +16,7 @@ csvkit,"csvkit is a suite of command-line tools for converting to and working wi
 python,,,,,,technology,,
 API,,,,,,technology,,
 RegEx,,,,,,technology,,1
-JSON,JSON (JavaScript Object Notation) is a lightweight data-interchange format.,,https://www.json.org/,,,technology,,1
+JSON,JSON (JavaScript Object Notation) is a lightweight data-interchange format.,Store structure data with less boilerplate,https://www.json.org/,,,technology,,1
 Markdown,,,,,,technology,,1
+datasette,,Browse and explore data in SQLite database,https://datasette.readthedocs.io/en/stable/index.html,https://datasette.readthedocs.io/en/stable/installation.html,,tool,,1
+YAML,,Store structured data in human readable format,https://en.wikipedia.org/wiki/YAML,,,technology,,1

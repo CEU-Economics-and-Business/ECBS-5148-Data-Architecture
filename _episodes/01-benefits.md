@@ -27,6 +27,9 @@ FIXME: hands-on exercise for planning (mapping?)
 
 FIXME: introduce and walk through one model in detail. tree. layers.
 
+## Reading
+[Concept maps](http://rodallrich.com/advphysiology/ausubel.pdf)
+
 > ## Challenge
 > Take a one-paragraph description of a Grimm story (favorite TV show?). Working in groups, represent the players and events on either (i) pyramid, (ii) tree, (iii) partition. Present your choice to the rest of the class. 
 {: .challenge}

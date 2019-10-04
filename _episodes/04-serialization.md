@@ -13,10 +13,14 @@ objectives:
 - Understand base64 encoding.
 - Download data in various formats using wget.
 - Explore .csv files with csvkit.
+- Explore JSON files with jq.
+- Write shell scripts to automate data manipulation.
 keypoints:
 - Always check your character encoding of your "plain text" data. Then immediately convert it in UTF-8.
 - Save data in human readable format to facilitate sharing and maintenance.
 ---
+
+FIXME: add content on data structures?
 
 > ## Exercise
 > Open `bash`. Find the folder with the _Verbbanten Bücher_ dataset and create a short documentation file `README.md`.
@@ -77,9 +81,17 @@ FIXME: code examples for shell script
 > ## Exercise
 > Using `jq`, create a list of JSON objects ("JSON lines"), with each record corresponding to a person-entry in the _Offene Register_, with the following fields: name, city, firm identifier.
 > > ## Solution
-> > `jq ". as $parent | .officers[] | {name: .name, firm: $parent.company_number, city: .other_attributes.city, position: .position}"`
+> > ```
+> > jq ". as $parent | .officers[] | {name: .name, firm: $parent.company_number, city: .other_attributes.city, position: .position}"
+> > ```
+> > {: .language-bash}
 > {: solution}
 {: .challenge}
+
+```
+jq -r '(map(keys) | add | unique) as $cols | map(. as $row | $cols | map($row[.])) as $rows | $cols, $rows[] | @csv' officer.json > officer.csv
+```
+{: .language-bash}
 
 FIXME: JSON and jq seem enough for this class
 
