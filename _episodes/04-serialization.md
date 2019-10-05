@@ -1,5 +1,5 @@
 ---
-title: "Data Serialization and Performance"
+title: "Data Serialization and Storage"
 teaching: 130
 exercises: 70
 questions:
@@ -19,8 +19,6 @@ keypoints:
 - Always check your character encoding of your "plain text" data. Then immediately convert it in UTF-8.
 - Save data in human readable format to facilitate sharing and maintenance.
 ---
-
-FIXME: add content on data structures?
 
 > ## Exercise
 > Open `bash`. Find the folder with the _Verbbanten Bücher_ dataset and create a short documentation file `README.md`.

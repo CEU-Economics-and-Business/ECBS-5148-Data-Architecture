@@ -26,14 +26,22 @@ FIXME: start with excel?
 
 FIXME: add .csv examples
 
-| Course Title | Student ID |
-|--------------|------------|
-{% for row in site.data.sis.roster %}| {{ row["Course Title"] }} | {{ row["Student ID"] }} | 
-{% endfor %}
+![]({{ "/fig/messy-data.png" | relative_url }})
+
 
 > ## Exercise
-> (FIXME: find a messy data). Identify the xx problems with this dataset.
+> Look at the data displayed above. Identify six problems with this dataset.
+> > ## Solution
+> > 1. Columns not titled properly.
+> > 2. Different types of data in a single column.
+> > 3. Course title abbreviated.
+> > 4. Names inconsistently recorded.
+> > 5. Rows do not correspond to records.
+> > 6. Information encoded in color/formatting.
+> {: .solution}
 {: .challenge}
+
+![]({{ "/fig/StudentList.png" | relative_url }})
 
 > ## Exercise
 > For each of the data sources listed on the course homepage, answer the following questions.
@@ -50,9 +58,14 @@ Relying on Silberschatz, Korth and Sudarshan, 2011. "Database System Concepts" 6
 
 FIXME: decide on language: records, rows, observations, features, columns, attributes, variables.
 
-FIXME: work out a simple student information system example?
+### Data from `roster.csv`
 
-Entities: student, faculty, course, stream?
+| Course Title | Student ID | Student Name | Program | Department | Reg Mode | Year |
+|--------------|------------|--------------|---------|------------|----------|------|
+{% for row in site.data.sis.roster %}| {{ row["Course Title"] }} | {{ row["Student ID"] }} | {{ row["Student Name"] }} | {{ row["Program"] }} | {{ row["Department"] }} | {{ row["Reg Mode"] }} | {{ row["Year"] }} | 
+{% endfor %}
+
+
 
 ### Primary key
 
