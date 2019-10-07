@@ -103,3 +103,4 @@ highlighter: rouge
 plugins:
   - jekyll-redirect-from
   - jekyll-paginate
+  - jekyll-diagrams
