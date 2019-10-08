@@ -1,7 +1,7 @@
 ---
 title: "Data Modeling"
-teaching: 200
-exercises: 0
+teaching: 100
+exercises: 100
 questions:
 - ""
 objectives:
@@ -69,21 +69,60 @@ FIXME: decide on language: records, rows, observations, features, columns, attri
 > {: .solution}
 {: .challenge}
 
+### Conceptual data model
+[An online tool](http://interactive.blockdiag.com/) to create block diagrams ("lines and boxes").
+
+#### Government Compensation in California
+{% blockdiag %}
+blockdiag {
+    employee1 -> employer1 -> region1;
+    employee2 -> employer1;
+    employer1 -> region2;
+    employee3 -> employer2 -> region2;
+}
+{% endblockdiag %}
+
+{% blockdiag %}
+blockdiag {
+    employee -> employer [label = "m:1"];
+    employer -- region [label = "m:m"];
+}
+{% endblockdiag %}
+
+#### Street Tree Census
+{% blockdiag %}
+blockdiag {
+    tree1 -> street1 -> region1;
+    tree2 -> street1;
+    tree3 -> street2 -> region1;
+}
+{% endblockdiag %}
+
+{% blockdiag %}
+blockdiag {
+    tree -> street [label = "m:1"];
+    street -> region [label = "m:1"];
+}
+{% endblockdiag %}
+
+#### Habitatges de Barcelona
+{% blockdiag %}
+blockdiag {
+   apartment1 -> address1 -> street1;
+   apartment2 -> address1 -> street1;
+   apartment3 -> address2 -> street1;
+}
+{% endblockdiag %}
 
 {% assign table_data = site.data.sis.roster %}
 {% assign table_caption = "Data from `roster.csv`" %}
 {% include table.html %}
 
-[An online tool](http://interactive.blockdiag.com/) to create block diagrams ("lines and boxes").
+> ## Exercise
+> Draw a block diagram representing the conceptual model of the student roster.
+{: .challenge}
 
-{% blockdiag %}
-blockdiag {
-   A -> B -> C -> D;
-   A -> E -> F -> G;
-}
-{% endblockdiag %}
-
-### Primary key
+## Normalization
 
 ### First normal form
 > All attributes are atomic. = All cells are single valued.
@@ -154,6 +193,21 @@ In `student-2NF.csv`, "Department" is a function of "Program."
 
 FIXME: add notation. UML? primary keys? foreign keys?
 
+> ## Challenge
+> Draw the Entity-Relation diagram of the student database.
+{: .challenge}
+
+{% blockdiag %}
+blockdiag {
+    roster;
+    course -> roster [label = "m:1"];
+    student -> roster [label = "registers"];
+    student -> program [label = "belongs to"];
+    program -> department [label = "offered by"];
+}
+{% endblockdiag %}
+
+FIXME: draw proper UML diagrams
 
 The following is a document from the _Offene Register_ data about German corporations in [YAML format](https://en.wikipedia.org/wiki/YAML). Don't worry about the specific format now, try to understand what the document says.
 ```
@@ -198,3 +252,9 @@ You can also [explore the database](https://db.offeneregister.de/openregister-ef
 {: .challenge}
 
 FIXME: This is physical layer.
+
+FIXME: stick to student data instead?
+
+FIXME: do joins
+
+FIXME: why denormalize?
