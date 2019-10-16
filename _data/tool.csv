@@ -4,7 +4,7 @@ OpenRefine,"A free, open source, powerful tool for working with messy data",Prac
 Neo4j,Graph database,,https://neo4j.com/,https://neo4j.com/sandbox-v2/?ref=hcard,https://neo4j.com/graphacademy/online-training/introduction-to-neo4j/,tool,,
 wget,,Download data from the web,,,,tool,,1
 bash,"Bash is the shell, or command language interpreter, for the GNU operating system. ",,,https://git-scm.com/download/win,https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html,technology,,1
-jq,jq is a lightweight and flexible command-line JSON processor.,Read and process JSON data in the command line,https://stedolan.github.io/jq/,https://stedolan.github.io/jq/download/,https://stedolan.github.io/jq/tutorial/,tool,,1
+jq,jq is a lightweight and flexible command-line JSON processor.,Read and process JSON data in the command line,https://stedolan.github.io/jq/,https://stedolan.github.io/jq/download/,"https://stedolan.github.io/jq/tutorial/, https://cameronnokes.com/blog/working-with-json-in-bash-using-jq/",tool,,1
 GraphQL,A query language for your API,,https://graphql.org/,,https://graphql.org/learn/,technology,,
 dplyr,"dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges",,https://dplyr.tidyverse.org/,,https://r4ds.had.co.nz/transform.html,tool,,1
 UML,Universal Modeling Language,,,,,technology,,1
