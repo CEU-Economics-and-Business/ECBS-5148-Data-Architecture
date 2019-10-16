@@ -1,6 +1,6 @@
 ---
 title: "Relations Between Observations"
-teaching: 200
+teaching: 0
 exercises: 0
 questions:
 - ""

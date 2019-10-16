@@ -42,6 +42,17 @@ FIXME: introduce and walk through one model in detail. tree. layers.
 > You are the chief engineer of SpaceX, responsible for creating the first human base on Mars. You are putting in a budget request to Elon Musk. Create a one-page conceptual diagram explaining what you will need and why.
 {: .challenge}
 
+## Key tradeoffs
+1. Reliable
+2. Scalable
+3. Maintainable
+
+## Layers
+1. Context
+2. Conceptual
+3. Logical
+4. Physical
+
 > ## Exercise
 > You have a data processing script written in Python that can process 1 million recods in one hour. Rewriting it in C++ would make it 30 times faster, but would take 100 hours of developer time. If you minimize the sum of developer plus machine time, when would you choose to rewrite the code in C++?
 {: .challenge}

@@ -1,7 +1,7 @@
 ---
 title: "Designing for Posterity"
-teaching: 200
-exercises: 0
+teaching: 120
+exercises: 60
 questions:
 - ""
 objectives:

@@ -23,8 +23,8 @@ keypoints:
 FIXME: lesson is too long
 
 ## Reading
-- [Data model](https://en.wikipedia.org/wiki/Data_model)
-- [tidy data](http://www.jstatsoft.org/v59/i10/paper)
+1. [Data model](https://en.wikipedia.org/wiki/Data_model)
+-2.[tidy data](http://www.jstatsoft.org/v59/i10/paper)
 
 ## Tidy data
 
