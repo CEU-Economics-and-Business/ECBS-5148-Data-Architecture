@@ -17,7 +17,7 @@ objectives:
 keypoints:
 - Normalized data can be maintained with fewer errors.
 - Denormalization helps analysis speed.
-- Denormalize data the momemnt before analysis.
+- Denormalize data the moment before analysis, not sooner.
 ---
 
 FIXME: lesson is too long
@@ -25,6 +25,7 @@ FIXME: lesson is too long
 ## Reading
 1. [Data model](https://en.wikipedia.org/wiki/Data_model)
 2. [tidy data](http://www.jstatsoft.org/v59/i10/paper)
+3. [Cost of a join](https://www.brianlikespostgres.com/cost-of-a-join.html)
 
 ## Tidy data
 

@@ -16,6 +16,7 @@ objectives:
 keypoints:
 - If your algorithm is worse than O(n), think harder.
 - Indexing takes unordered lists of data and converts them into data structures suitable for efficient lookup.
+- "Hash tables > search trees > unordered lists"
 ---
 
 # Reading
