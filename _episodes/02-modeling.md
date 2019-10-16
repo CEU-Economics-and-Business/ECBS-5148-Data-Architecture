@@ -1,5 +1,5 @@
 ---
-title: "Data Modeling"
+title: "Maintenance and Data Modeling"
 teaching: 220
 exercises: 110
 questions:
@@ -24,7 +24,7 @@ FIXME: lesson is too long
 
 ## Reading
 1. [Data model](https://en.wikipedia.org/wiki/Data_model)
--2.[tidy data](http://www.jstatsoft.org/v59/i10/paper)
+2. [tidy data](http://www.jstatsoft.org/v59/i10/paper)
 
 ## Tidy data
 

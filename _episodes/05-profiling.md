@@ -1,5 +1,5 @@
 ---
-title: "Data Integration and Profiling"
+title: "Quality and Data Profiling"
 teaching: 170
 exercises: 85
 questions:
