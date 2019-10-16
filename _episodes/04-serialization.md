@@ -20,6 +20,9 @@ keypoints:
 - Save data in human readable format to facilitate sharing and maintenance.
 ---
 
+## Reading
+1. [Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+
 > ## Exercise
 > Open `bash`. Find the folder with the _Verbbanten Bücher_ dataset and create a short documentation file `README.md`.
 {: .challenge}
@@ -39,7 +42,7 @@ FIXME: code examples for shell script
 {: .challenge}
 
 > ## Exercise
-> Represent the entites in the following nursery rhyme in JSON, XML and YAML. Give them a unique numeric identifier 1 through 7.
+> Represent the entites in the following nursery rhyme in JSON, XML and YAML. Give them a unique numeric identifier starting from 1. (You don't have to type out all entitis, but do think about the numbering.)
 > > As I was going to St Ives,  
 > > Upon the road I met seven wives;  
 > > Every wife had seven sacks,  
@@ -83,7 +86,7 @@ FIXME: code examples for shell script
 > > jq ". as $parent | .officers[] | {name: .name, firm: $parent.company_number, city: .other_attributes.city, position: .position}"
 > > ```
 > > {: .language-bash}
-> {: solution}
+> {: .solution}
 {: .challenge}
 
 ```
