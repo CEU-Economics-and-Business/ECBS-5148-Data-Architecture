@@ -1,5 +1,5 @@
 ---
-title: "Data Integration"
+title: "Data Integration for Wider Information"
 teaching: 0
 exercises: 0
 questions:

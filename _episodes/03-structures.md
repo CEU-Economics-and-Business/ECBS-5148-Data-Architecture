@@ -1,5 +1,5 @@
 ---
-title: "Speed and Data Structures"
+title: "Data Structures for Faster Performance"
 teaching: 170
 exercises: 85
 questions:

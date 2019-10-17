@@ -1,5 +1,5 @@
 ---
-title: "Space and Data Serialization"
+title: "Data Serialization for Ease of Sharing"
 teaching: 130
 exercises: 70
 questions:

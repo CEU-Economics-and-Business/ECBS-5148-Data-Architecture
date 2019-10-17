@@ -1,5 +1,5 @@
 ---
-title: "Maintenance and Data Modeling"
+title: "Data Modeling for Maintanable Data Products"
 teaching: 220
 exercises: 110
 questions:

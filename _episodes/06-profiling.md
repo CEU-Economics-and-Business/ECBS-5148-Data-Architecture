@@ -1,5 +1,5 @@
 ---
-title: "Quality and Data Profiling"
+title: "Data Profiling for Better Quality"
 teaching: 170
 exercises: 85
 questions:

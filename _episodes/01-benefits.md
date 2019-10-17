@@ -1,5 +1,5 @@
 ---
-title: "The Benefits of Good Architecture"
+title: "Data Architecture for Reprodicuble Analysis"
 teaching: 130
 exercises: 70
 questions:
