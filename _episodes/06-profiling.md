@@ -56,3 +56,4 @@ FIXME: change exercises to use [Thomas Padilla's tutorial](http://thomaspadilla.
 > ## Challenge
 > Load the `officer.csv` dataset in Open Refine. Merge people with similar names in the same city and given them a unique identifier. 
 {: .challenge}
+

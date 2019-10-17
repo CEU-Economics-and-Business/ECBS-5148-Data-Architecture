@@ -56,12 +56,13 @@ We will discuss 2-4. But that's where most of the work is done anyway. In the [C
 Design choice: Start from the end with plenty of scaffolding. Move backwards and take away the scaffolding. This is like running 5k, 10k, 20k before attempting a marathon. (Sorry for the mix of metaphors.) Otherwise we would be like a coaching plan for a marathon: "Run the first km. Then run the other 41."
 
 1. Tidy data ready for analysis
-2. Denormalize from well designed and maintained relational data
-3. Choose data structures for performance
-4. Prepare data for sharing and reuse
+2. [Denormalize from well designed and maintained relational data](Episode 2)
+3. [Choose data structures for performance](Episode 3)
+4. [Prepare data for sharing and reuse](Episode 4)
     - serialization
     - packaging
-5. Find and fix common data quality errors
+5. [Integrate]()
+5. [Find and fix common data quality errors]()
 6. Design choices
 
 ## Not covered
