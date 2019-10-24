@@ -1,59 +1,86 @@
 ---
 title: "Data Profiling for Better Quality"
-teaching: 170
-exercises: 85
+teaching: 130
+exercises: 70
 questions:
-- ""
+- How do I explore my data for common data entry errors?
+- How do I extract numeric information from malformatted data?
+- How do I normalize mistyped text data?
 objectives:
-- Understand the extract-transform-load workflow.
-- Use dplyr for basic data transformations.
-- Split multi-valued columns into rows.
-- Reshape data long from variable name patterns.
-- Compare different methods of Entity Resolution.
-- Normalize strings referring to people and corporations using regular expressions.
-- Apply Levenshtein and other fuzzy distance metrics.
-- Use OpenRefine for Entity Resolution.
 - Use string functions in OpenRefine to normalize text data.
-- Create hiearchical groups.
+- Explore data in OpenRefine with facets and filters.
+- Use OpenRefine to split and reshape data.
+- Use simple regular expressions to exract numerical information from textual data.
+- Save, edit and replay changes in OpenRefine on different datasets.
+- Reshape data long from variable name patterns.
 keypoints:
-- There is always a tradeoff between false positives and false negatives in entity resolution.
-- Normalize records before comparing them to minimize the necessary number of comparisons.
+- OpenRefine gives an interactive overview of your data as it is.
+- Experiment with various text replace functions, clustering and regular expressions.
+- Save all your steps in a .json file.
+- If your data is large, conduct cleaning on a random sample.
 ---
 
 ## Reading
 1. [Falsehoods about names](https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/)
 2. [Beider-Morse phonetic matching](https://stevemorse.org/phonetics/bmpm2.htm)
+3. [Dates are difficult](https://www.i-programmer.info/babbages-bag/391-dates-are-difficult.html)
 
-FIXME: teach regex?
+## Review and transform textual data (25 mins)
 
-## Make data tidy
+1. [Thomas Padilla's tutorial](http://thomaspadilla.org/dataprep/). 
+2. Create project.
+3. Text faceting, multiple editing.
+4. Go through various clustering options, including Levenshtein distance. These still don't match "Titan" to "Titan Books". 
+5. Illustrate GREL transformations `value.replace('.', '')` and `value.replaceChars('.', '')`. 
+6. Also, simple regex to extract publication dates, `value.find(/\d{4}/)[0]`. Convert `toNumber()`. Check with Numeric facet.
+7. Export project.
+8. Undo/redo. Export .json script.
 
-We will use [`dplyr`](https://r4ds.had.co.nz/tidy-data.html) for this purpose.
+> ## Exercise (10 mins)
+> Cluster and edit the Author-Persons column. How many distinct authors are there?
+>> ## Solution
+>> Edit cells / Transform / Cluster and edit. Select "fingerprint" first, then "ngram-fingerprint", then "Beider-Morse". Only then switch to Nearest neighbor and select "levenshtein" with radius of 1.0. With these steps, you can reduce the number of distinct authors from about 5,400 to about 4,000.
+> {: .solution}
+{: .challenge}
+
+[The Carpentries](https://librarycarpentry.org/lc-open-refine/)
+
+
+
+## Reshape data
+
+> ## Gotcha
+> When using "Edit cells / Fill down" to fill in missing values for multiple columns, always start from the last column and work leftwards. OpenRefine defines records based on the first columns and so these shoul be changed last. 
+{: .callout}
+
+> ## Code example
+> Read `gdp-wide.csv` and reshape it in long format using OpenRefine. Select rows matching "World" and save as .csv.
+
+> ## Challenge
+> Read `WDI-3indicators.csv`. Make it tidy. Save as three separate .csv files.
+{: .challenge}
+
+> ## Code example
+> Open the TED sample for Germany in OpenRefine. Split the name of winners into separate rows.
 
 > ## Exercise
-> Read `gdp-wide.csv` and reshape it in long format using `dplyr`. Save as .csv.
+> Split the address of winners into separate rows. Do it for all address components.
+{: .challenge}
+
+> ## Code example
+> Select relevant columns: `ID_AWARD`, `WIN_*`. Save as `award-winner.csv`.
+> Save steps in JSON file. Illustrate going back in time.
+> Replay same JSON on larger file.
+>
+> Now replace numbers in `WIN_TOWN`.
+
+> ## Exercise 
+> Save the JSON file of all the steps we have done, including removing the numbers from `WIN_TOWN`. Replay these changes on the larger sample.
 {: .challenge}
 
 > ## Challenge
-> Read `WDI.csv`. Make it tidy. Save as .csv.
-{: .challenge}
-
-> ## Challenge
-> Load the Verboten Bücher dataset in Open Refine. Split books with multiple authors into a separate author and relationship table. 
+> Edit the original JSON file to make the same edits for Contracting Agencies (`CAE_*`). Split into rows, fill down, remove numbers from city. Create an `award-cae.csv`.
 {: .challenge}
 
 
-FIXME: is dplyr too much?
-
-> ## Exercise
-> Suppose you have a dataset of `n` records that you want to disambiguate. It takes 1ms to compare any pair of records and decide whether they belong to the same entity. You can also classify each record into one of 10 equal-sized groups, but this is slow: it takes 1s per record. There are no matches outside groups, so if you create groups, you only need to compare records within groups.
-> 
-> Draw a diagram of the time needed for disambiguation as a function of `n`, with and without grouping. For what values of `n` do you want to create groups? Explain. 
-{: .challenge}
-
-FIXME: change exercises to use [Thomas Padilla's tutorial](http://thomaspadilla.org/dataprep/) or [The Carpentries](https://librarycarpentry.org/lc-open-refine/)
-
-> ## Challenge
-> Load the `officer.csv` dataset in Open Refine. Merge people with similar names in the same city and given them a unique identifier. 
-{: .challenge}
 
