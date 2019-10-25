@@ -1,5 +1,0 @@
-graph TD
-	Raw --> Tidy
-	Tidy --> Normalized
-	Normalized --> Denormalized
-	Denormalized --> Analysis

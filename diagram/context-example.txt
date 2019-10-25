@@ -1,0 +1,26 @@
+blockdiag{
+	orientation = portrait
+
+	Context [label = "Analyze DE procurement for small firm interested   in competing"];
+	"Data Product" [label = "Searchable database     of competitors"];
+
+	Context -> "Data Product";
+	c3a [label = "Tenders Electronic Daily"];
+	c3b [label = "Offene Register"];
+	c3c [label = "Common Procurement   Vocabulary"];
+
+	group {
+		c3a; c3b; c3c;
+	}
+
+	"Data Product" -> c3a, c3b, c3c;
+
+	c4a [label = "Tender table"];
+	c4b [label = "Buyer"];
+	c4c [label = "Seller"];
+	group {
+		c4a; c4b; c4c;
+	}
+
+	c3a -> c4a, c4b, c4c;
+}
