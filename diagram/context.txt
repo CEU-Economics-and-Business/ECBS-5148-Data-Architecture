@@ -1,0 +1,23 @@
+blockdiag{
+	orientation = portrait
+
+	Context -> "Data Product";
+	c3a [label = "Data Set"];
+	c3b [label = "Data Set"];
+	c3c [label = "Data Set"];
+
+	group {
+		c3a; c3b; c3c;
+	}
+
+	"Data Product" -> c3a, c3b, c3c;
+
+	c4a [label = "Data Object"];
+	c4b [label = "Data Object"];
+	c4c [label = "Data Object"];
+	group {
+		c4a; c4b; c4c;
+	}
+
+	c3a -> c4a, c4b, c4c;
+}

@@ -1,0 +1,11 @@
+graph LR
+	subgraph Data Architecture
+		d1(Context) --> d2(Data Product)
+		d2 --> d3(Data Set)
+		d3 --> d4(Schema)
+	end
+	subgraph Software Architecture
+		s1(Context) --> s2(Container)
+		s2 --> s3(Component)
+		s3 --> s4(Code)
+	end

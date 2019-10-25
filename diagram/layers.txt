@@ -1,0 +1,6 @@
+graph TD
+	subgraph Design Phases
+		p1(Context) --> p2(Conceptual)
+		p2 --> p3(Logical)
+		p3 --> p4(Physical)
+	end

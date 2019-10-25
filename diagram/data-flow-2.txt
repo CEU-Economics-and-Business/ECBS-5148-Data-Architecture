@@ -1,0 +1,9 @@
+blockdiag {
+	Raw -> Tidy [folded];
+	Tidy -> Normalized;
+	Normalized -> Denormalized;
+	Denormalized -> Analysis [folded];
+	group {
+		Tidy; Normalized; Denormalized;
+	}
+}
