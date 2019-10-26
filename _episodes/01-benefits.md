@@ -1,7 +1,7 @@
 ---
 title: "Data Architecture for Reprodicuble Analysis"
-teaching: 130
-exercises: 70
+teaching: 70
+exercises: 55
 questions:
 - Who needs the data and why? What legal and technological constraints do we face?
 - What is the best shape of the data for answering the analysis questions?
@@ -23,11 +23,12 @@ keypoints:
 
 {% include mermaid.html %}
 
-## Reading
-1. Chapter 1 of Brown (2018), [Software Architecture for Developers, Volume 1](https://leanpub.com/software-architecture-for-developers/).
-2. Chapter 1 of Kleppmann (2016), [Designing Data-Intensive Applications](https://dataintensive.net/buy.html).
-3. [Concept maps](http://rodallrich.com/advphysiology/ausubel.pdf)
-4. [Data lakes](https://martinfowler.com/bliki/DataLake.html)
+> ## Reading
+> 1. Chapter 1 of Brown (2018), [Software Architecture for Developers, Volume 1](https://leanpub.com/?software-architecture-for-developers/).
+> 2. Chapter 1 of Kleppmann (2016), [Designing Data-Intensive Applications](https://dataintensive.net/buy.html).
+> 3. [Concept maps](http://rodallrich.com/advphysiology/ausubel.pdf)
+> 4. [Data lakes](https://martinfowler.com/bliki/DataLake.html)
+{: .discussion}
 
 ## Concept maps
 
@@ -69,7 +70,7 @@ graph TD
 {: .challenge}
 
 ## The life cycle of data
-We will be thinking about how data moves through your organization.
+We will be thinking about how data moves through our organization.
 
 > ## Data Architecture
 > Data architecture spans the gap between “data as it is” and “data most suitable for analysis.”
@@ -77,8 +78,47 @@ We will be thinking about how data moves through your organization.
 
 <div class="mermaid">
 graph LR
-    a(Data as it is) --> b(Data suitable for analysis)
+    a(As it is) --> b(Suitable for analysis)
 </div>
+
+As _data analysts_, we are often tempted to focus on what we need and force data to match our needs. 
+
+For example, we might have a dataset capturing job spells,
+
+| Firm | Worker | Start | End |
+|------|--------|-------|-----|
+| Apple | Jobs | 1976-01-01 | 1985-09-17 |
+| Apple | Jobs | 1997-09-17 | 2011-08-24 |
+| Apple | Cook | 2011-08-24 | |
+
+but we want to merge this data to annual financial information on firms. To faciliate this merge, we might create annual snapshots of the data
+
+| Firm | Worker | Year |
+|------|--------|------|
+| Apple | Jobs | 1976 |
+| Apple | Jobs | ... |
+| Apple | Jobs | 1985 |
+| Apple | Jobs | 1997 |
+| Apple | Jobs | ...  |
+| Apple | Jobs | 2010 |
+| Apple | Cook | 2011 |
+
+This duplicates a lot of information (we create a record every year even if things have not changed), but also loses a substantial amount. What if we want to do new analysis on daily stock returns? We would need daily information of who runs Apple, but we have destroyed that information.
+
+As _data architects_, we respect our raw data and use "data as it is" our starting point. But we also keep in mind where we are going, what we want to achieve with our data product.
+
+> ## Exercise
+> Review the [example datasets]({{ "setup.html" | relative_url }}). Select two datasets and before looking at them in more detail, pose a question about their structure and content. Then go on the website, explore the data and documentation, and try to answer your question.
+>> ## Solution
+>> This is a sample of possible questions and answers.
+>> 
+>> * Does "Habitatges d'ús turístic de la ciutat de Barcelona" contain information on whether an apartment is listed through AirBnB? No.
+>> * Is "Government Compensation in California" really at the employee level? Yes, it is reported for each job in each year. But names are not included.
+>> * How many trees are there in NYC? The survey identified 666,134 unique trees.  
+> {: .solution}
+{: .challenge}
+
+In a typical data analysis workflow, we will
 
 1. Collect and discover
 2. Profile and clean
@@ -87,6 +127,8 @@ graph LR
 5. Explore and visualize
 6. Structure and analyze
 7. Deploy and scale
+
+FIXME: decide on terminology
 
 > ## Hadley Wickham's version
 > Hadley Wickham splits data analysis into the following stages. This is helpful, but we want to dig deeper in steps 1-3.
@@ -108,6 +150,27 @@ graph LR
         Normalized --> Structured
     end
 	Structured --> Analysis
+</div>
+
+In fact, we'd like our data product to be reusable for multiple analysis projects. 
+
+Raw data can come in any format. We discuss different formats of [data serialization]({{ "04-serialization/index.html" | relative_url }}). 
+Data tidying should not depend on which analytics project we are conducting. Common data quality issues can be checked and fixed via [data profiling]({{ "06-profiling/index.html" | relative_url }}).
+We can create a normalized view of the relevant data through [data integration]({{ "05-integration/index.html" | relative_url }}).
+What specifically we need will be decided through [data modeling]({{ "02-modeling/index.html" | relative_url }}). And our normalized data can be reshape in the [structure]({{ "03-structures/index.html" | relative_url }}) most suitable for its end use.
+
+<div class="mermaid">
+graph LR
+	r1[Raw] --> t1[Tidy]
+	r2[Raw] --> t2[Tidy]
+    subgraph Architecture
+        t1 --> Normalized
+        t2 --> Normalized
+        Normalized --> s1[Structured]
+        Normalized --> s2[Structured]
+    end
+	s1 --> a1[Analysis]
+	s2 --> a2[Analysis]
 </div>
 
 ### Not covered
@@ -182,15 +245,26 @@ graph TD
 {: .challenge}
 
 ## Key tradeoffs in data architecture
-1. Reliable
-2. Scalable
-3. Maintainable
+A "data-intensive application" (Kleppmann, 2016) should be
+1. Reliable: "continuing to work correctly, even when things go wrong."
+2. Scalable: "ability to cope with increased volume of data."
+3. Maintainable: "minimize pain during maintenance" via (i) operability, (ii) simplicity, and (iii) evolvability.
+
+An autopilot system of aircrafts should prioritize reliability over anything else. A web app like Twitter should prioritize scalability over anything else.
+
+> As analysts, we value reliability and scabality, but we prioritize **maintainability** over anything else.
+> Thus, architecture for analytics is very different from architecture for production. 
+
+The three components of maintainability (Kleppmann, 2016):
+1. Operability. Most analytics teams are small with low budget with limited dedicated IT support.
+2. Simplicity. A lot of analytics is done by fast-changing teams and it is important for newcomers to understand our data products quickly.
+3. Evolvability. Analysis is an iterative process with frequent changes (think R&D, not production). It should be easy to make changes to our data product. 
 
 > ## Exercise
 > You have a data processing script written in Python that can process 1 million recods in one hour. Rewriting it in C++ would make it 30 times faster, but would take 100 hours of developer time. If you minimize the sum of developer plus machine time, when would you choose to rewrite the code in C++?
+>> ## Solution
+>> The Python script processes 1 million records per hour, or 1 hour per million records. The C++ code would process 30 million records per hour, or 2 minutes per million records. The time gain is 58 minutes per million records. The loss in developer time if switch to C++ is 100 hours, or 6,000 minutes. To have the same gain in processing time, we need to process 6000/58 = 103.4 million records. So if our dataset is more than 103.4 million records, it is worth rewriting it in C++. (Note that we have ingored other maintainability aspects. Will our developers be able to make changes to the Python/C++ code?)
+> {: .solution}
 {: .challenge}
 
-> ## Challenge
-> Draw a conceptual model for a data product suitable for analyzing which firms win the most EU contracts. 
-{: .challenge}
-
+This is not to say that scale does not matter. We will surely encounter datasets big enough not to fit our own laptop. [Episode 3]({{ "03-structures/index.html" | relative_url }}) discusses scalability and speed.

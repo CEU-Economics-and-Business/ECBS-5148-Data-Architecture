@@ -17,16 +17,8 @@ University (2000) and a B.A. from Corvinus University Budapest (1999). Before co
 at the Federal Reserve Bank of New York and at Princeton University.
 
 > ## Prerequisites
-> Students should have taken Data Engineering 1: Different Shapes of Data.
+> Students should have taken Informatics Pre-Session and Data Engineering 1: Different Shapes of Data.
 > 
 {: .prereq}
-
-## Outline
-
-1. Context: Understand user requirements and technical constraints.
-2. Conceptual model: Map out the ideal shape of data for matching requirements.
-3. Logical model: 
-4. Physical model: select technologies and tools.
-
 
 {% include links.md %}
