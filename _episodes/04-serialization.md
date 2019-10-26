@@ -11,10 +11,9 @@ objectives:
 - Explain the tradeoffs in data serialization.
 - Use hexadecimal transformation of numbers.
 - Understand base64 encoding.
-- Download data in various formats using wget.
+- Use head, less and grep to explore data stored in text files.
 - Explore .csv files with csvkit.
 - Explore JSON files with jq.
-- Write shell scripts to automate data manipulation.
 keypoints:
 - Always check your character encoding of your "plain text" data. Then immediately convert it in UTF-8.
 - Save data in human readable format to facilitate sharing and maintenance.
@@ -33,13 +32,7 @@ keypoints:
 
 FIXME: code examples for shell script
 
-> ## Exercise
-> Write a shell script to download all years of wage the for the [California Superior Court](https://publicpay.ca.gov/Reports/RawExport.aspx) and unzip them in a separate folder.
-{: .challenge}
-
-> ## Challenge
-> Download the Comercio Exterior data for 2018 using bash and wget. 
-{: .challenge}
+FIXME: add fixed width example (Comercio Exterior?)
 
 > ## Exercise
 > Represent the entites in the following nursery rhyme in JSON, XML and YAML. Give them a unique numeric identifier starting from 1. (You don't have to type out all entitis, but do think about the numbering.)

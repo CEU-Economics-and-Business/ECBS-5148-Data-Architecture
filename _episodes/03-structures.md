@@ -1,5 +1,5 @@
 ---
-title: "Data Structures for Faster Performance"
+title: "Data Structures for Scalability"
 teaching: 170
 exercises: 85
 questions:
