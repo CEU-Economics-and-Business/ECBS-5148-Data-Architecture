@@ -11,6 +11,7 @@ objectives:
 - Reason about things that do not exist (yet).
 - Separate important from unimportant features.
 - Represent a mental model visually.
+- Create diagrams with Mermaid.
 - Create concept map of data products.
 - Identify key trade-offs in data architecture.
 keypoints:
@@ -68,6 +69,28 @@ graph TD
 > ## Challenge (optional)
 > You are the chief engineer of SpaceX, responsible for creating the first human base on Mars. You are putting in a budget request to Elon Musk. Create a one-page conceptual diagram explaining what you will need and why.
 {: .challenge}
+
+### Using a diagram editor
+
+There are many simple and powerful tools to create and edit diagrams. These note use [Mermaid JS](https://mermaidjs.github.io/#/), which has a natural "plain text" syntax.
+
+```
+graph TD
+    subgraph S
+        s1(Student) --> m1(Code)
+        s2(Student) --> m2(Code)
+        s3(Student) --> m3(Code)
+    end
+    subgraph T
+        t(Teacher) --> m(Code)
+    end
+    m -.- m1 -.- m2 -.- m3
+```
+{: .source}
+
+> ## Exercise
+> Using the [Mermaid Live Editor](https://mermaidjs.github.io/mermaid-live-editor/), create a diagram of your Grimm story. Save the diagram as a text file on your computer.
+{: .challenge} 
 
 ## The life cycle of data
 We will be thinking about how data moves through our organization.
