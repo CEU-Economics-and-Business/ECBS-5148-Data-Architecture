@@ -60,10 +60,17 @@ graph TD
 
 > ## Exercise
 > Label each line with a verb.
+>> ## Solution
+>> For frontal instruction: Teacher "prepares," "presents" material. Student "reads," "downloads," "absorbs," "learns" material.
+>>
+>> For live coding: Teacher "writes" code. Student "writes" code, "compares to," "reviews" Teacher's code.
+> {: .solution}
 {: .challenge}
 
 > ## Challenge
-> Take a one-paragraph description of a Grimm story. Working in groups, represent the players and events on a concept map.  
+> Take a one-paragraph description of a Grimm story. Working in groups, represent the players and events on a concept map. 
+>> ## Solution
+>> [One example](https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcblN0ZXBtb3RoZXItLUFkdmljZS0tPlNpc3RlcnNcblN0ZXBtb3RoZXItLU5vIHBhcnR5LS0-Q2luZGFyZWxsYVxuU2lzdGVycy0tTW9jay0tPkNpbmRhcmVsbGFcblByaW5jZS0tUG90ZW50aWFsIHJlbGF0aW9uc2hpcC0tPkNpbmRhcmVsbGFcbkNpbmRhcmVsbGEtLURhbmNlIGFsbCBuaWdodC0tPlByaW5jZVxuQVtXaGl0ZSBiaXJkXS0tRHJvcCBzaG9lLS0-Q2luZGFyZWxsYVxuUHJpbmNlLS1Ucnkgb24gc2hvZXMgcGxzLS0-Q2luZGFyZWxsYVxuUHJpbmNlLS1Ucnkgb24gc2hvZXMgcGxzLS0-U2lzdGVyc1xuS2luZy0tSW52aXRlLS0-U2lzdGVyc1xuS2luZy0tT3JkYWluIGZlc3RpdmFsLS0-UHJpbmNlIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0). We also realized [Sequence Diagrams](https://mermaidjs.github.io/#/sequenceDiagram) may be more suited to telling a story. 
 {: .challenge}
 
 > ## Challenge (optional)
@@ -90,6 +97,9 @@ graph TD
 
 > ## Exercise
 > Using the [Mermaid Live Editor](https://mermaidjs.github.io/mermaid-live-editor/), create a diagram of your Grimm story. Save the diagram as a text file on your computer.
+>> ## Solution
+>> See above
+> {: .solution}
 {: .challenge} 
 
 ## The life cycle of data
@@ -150,8 +160,6 @@ In a typical data analysis workflow, we will
 5. Explore and visualize
 6. Structure and analyze
 7. Deploy and scale
-
-FIXME: decide on terminology
 
 > ## Hadley Wickham's version
 > Hadley Wickham splits data analysis into the following stages. This is helpful, but we want to dig deeper in steps 1-3.
