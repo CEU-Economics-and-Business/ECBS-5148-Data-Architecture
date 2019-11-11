@@ -1,9 +1,11 @@
 ---
 title: "Data Modeling for Maintanable Data Products"
-teaching: 220
-exercises: 110
+teaching: 100
+exercises: 100
 questions:
-- ""
+- What entities are represented in the data?
+- How do these entites relate to one another?
+- Why should I normalize my database?
 objectives:
 - Recognize tidy data. 
 - Create logical model for simple relational data and represent it with Entity-Relation Diagrams.
