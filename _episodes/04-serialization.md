@@ -3,16 +3,15 @@ title: "Data Serialization for Ease of Sharing"
 teaching: 130
 exercises: 70
 questions:
-- ""
+- What are the benefits of text file relative to binary formats?
+- Why cannot open my data in Excel?
+- How do I explore large files?
 objectives:
 - Understand character encodings and Unicode points.
 - Load and save text file with different character encodings.
 - Compare popular serialization formats fixed width, CSV, JSON, XML, YAML, JSONlines, Parquet.
 - Explain the tradeoffs in data serialization.
-- Use hexadecimal transformation of numbers.
-- Understand base64 encoding.
-- Use head, less and grep to explore data stored in text files.
-- Explore .csv files with csvkit.
+- Use head and wc to explore data stored in text files.
 - Explore JSON files with jq.
 keypoints:
 - Always check your character encoding of your "plain text" data. Then immediately convert it in UTF-8.
