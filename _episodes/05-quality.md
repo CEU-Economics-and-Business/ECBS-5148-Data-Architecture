@@ -58,7 +58,7 @@ Read `gdp-wide.csv` and reshape it in long format using OpenRefine. Select rows 
 ![]({{ "/fig/gdp-wide.png" | relative_url }})
 
 > ## Gotcha
-> When using "Edit cells / Fill down" to fill in missing values for multiple columns, always start from the last column and work leftwards. OpenRefine defines records based on the first columns and so these should be changed last. 
+> When using "Edit cells / Fill down" to fill in missing values for multiple columns, remember to turn on viewing Records, not Rows.
 {: .callout}
 
 
@@ -141,15 +141,22 @@ Typically the business costs of false positives are larger (you don't want to se
 
 You may have seen these type of errors in binary classification problems. Indeed, ER can be aided by supervised machine learning. Suppose we have a set of features _X_ in each record that are potentially informative about their entity. I need to decide, for each _X1_ and _X2_, whether they refer to the same entity, that is, whether _f(X1, X2)=1_. Given a training sample on _y = f(X1, X2)_, this is a standard machine learning problem.
 
-How do I get a training sample? 
+### How do I get a training sample? 
 1. I can hand label a training sample. This should not be a random sample, because matches/duplicates are rare. Because for a sample size _k_ I have to make O(k^2) comparisons, this is very costly.
-2. For a subset of observation, I may have unique identifiers.
+2. For a subset of observation, I may have unique identifiers. For example, I have collected noy only names, but also student IDs in one year. 
+
+```
+SELECT WIN_NAME, WIN_NATIONALID, WIN_ADDRESS, WIN_POSTAL_CODE, WIN_TOWN, WIN_COUNTRY_CODE 
+    FROM messy 
+    WHERE NOT WIN_NATIONALID = "";
+```
+{: .language-sql}
 
 
 ## Appreciate complexity
 The second guiding principle is to appreciate the computational complexity. If you are unsure about your data, you have to compare every observation with every other, making `N(N-1)/2` comparisons in a dataset with `N` observations. (See box on why it is sufficient to make _pairwise_ comparisons.) In a large dataset this becomes prohibitively many comparisons. For example, if you want to deduplicate users from a dataset with 100,000 observations (a small dataset), you have to make 10 _billion_ comparisons. Throughout the ER process, you should be looking for ways to reduce the number of necessary comparisons.
 
-Comparing each pair of _N_ records is of complexity O(N^2). Avoid doing this like the plague.
+Comparing each pair of _N_ records is of complexity O(N^2). Avoid doing this.
 
 How do we reduce complexity? Creating an index can help but it will take up a large space. For example, we can index all [n-grams](https://en.wikipedia.org/wiki/N-gram) appearing in the text.
 
