@@ -587,7 +587,7 @@ Or, in a fuller example:
 > XML is very powerful and extremely widely used as a data interchange format. You can set up XML schemas to validate XML documents. There are even XML database engines. However, it uses a lot of boilerplate (closing tags, for example) and is an eyesore. JSON is much easier on the eyes and YAML is best for humans. Since YAML is not that widely used, JSON seems a good compromise. 
 {: .discussion}
 
-## Query structured documents
+## Query structured documents (optional)
 
 XPath and jq.
 

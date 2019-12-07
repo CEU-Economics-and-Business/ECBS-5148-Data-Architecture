@@ -10,7 +10,7 @@ objectives:
 - Recognize standards most often used for identifiers (ISO-3166, ISO-8601).
 - Understand basic robots.txt structure.
 - Use wget to download data from the web.
-- Use for loops in bach to automate data transformations.
+- Use for loops in bash to automate data transformations.
 - Create conversion tables to respect architectural boundaries of data.
 - Create a Data Package to share data and metadata together.
 keypoints:
